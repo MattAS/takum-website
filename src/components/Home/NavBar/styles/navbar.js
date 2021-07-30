@@ -14,6 +14,17 @@ export const Inner = styled.div`
 export const Image = styled.img`
   width: 12%;
   height: 12%;
+  
+  @media only screen and (max-width: 768px) {
+    width: 20%;
+    height: auto;
+  }
+  
+  @media only screen and (max-width: 480px) {
+    width: 25%;
+    height: auto;
+  }
+  
 `;
 
 export const Links = styled.div`
@@ -29,4 +40,13 @@ export const Links = styled.div`
 export const Text = styled.a`
   font-size: 1.25em;
   color: #343434;
+  
+  @media only screen and (max-width: 768px) {
+    font-size: 1.2rem;
+  }
+  
+  @media only screen and (max-width: 480px) {
+    font-size: 0.7rem;
+  }
+  
 `;

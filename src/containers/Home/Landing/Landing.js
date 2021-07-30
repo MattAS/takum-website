@@ -1,8 +1,11 @@
 import { Landing } from "../../../components/Home";
 import PhoneMockup from "../../../assets/images/phone_mockup.png";
 import { Form } from "../../../components/Home";
+import { useMediaQuery } from 'react-responsive'
 
 export function LandingContainer() {
+  const isPhone = useMediaQuery({ query: '(max-width: 480px)' })
+
   return (
     <Landing.Container>
       <Landing>
@@ -10,9 +13,21 @@ export function LandingContainer() {
           <Landing.Header>Solusi Hukum dalam Genggaman Tangan</Landing.Header>
           <Form.Container>
             <Form>
-              <Form.Input width={"10%"} placeholder="+62" />
-              <Form.Input width={"45%"} placeholder="Klik di sini" />
-              <Form.Button>Ayo Gabung!</Form.Button>
+              { !isPhone ?
+                <>
+                  <Form.Input width={"10%"} placeholder="+62" />
+                  <Form.Input width={"45%"} placeholder="Klik di sini" />
+                  <Form.Button>Ayo Gabung!</Form.Button>
+                </>
+                :
+                <>
+                  <div style={{ width: "100%", display: "flex" }}>
+                    <Form.Input width={"10%"} placeholder="+62" />
+                    <Form.Input width={"45%"} placeholder="Klik di sini" />
+                  </div>
+                  <Form.Button>Ayo Gabung!</Form.Button>
+                </>
+              }
             </Form>
           </Form.Container>
         </Landing.Body>
