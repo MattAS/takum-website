@@ -15,7 +15,7 @@ export default function LawyerCard({ children, ...restProps }) {
 
 LawyerCard.Container = function LawyerCardContainer({
   children,
-  width = "28%",
+  width = "25%",
   height = "75%",
   ...restProps
 }) {
@@ -27,11 +27,15 @@ LawyerCard.Container = function LawyerCardContainer({
 };
 
 LawyerCard.Image = function LawyerCardImage({ ...restProps }) {
-  return <Image {...restProps} />;
+  return <Image resizeMode="cover" {...restProps} />;
 };
 
-LawyerCard.Text = function LawyerCardText({ children, ...restProps }) {
-  return <Text {...restProps}>{children}</Text>;
+LawyerCard.Text = function LawyerCardText({ weight, children, ...restProps }) {
+  return (
+    <Text weight={weight} {...restProps}>
+      {children}
+    </Text>
+  );
 };
 
 LawyerCard.Icon = function LawyerCardIcon({ ...restProps }) {

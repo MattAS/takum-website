@@ -1,8 +1,8 @@
 import styled from "styled-components/macro";
 
 export const Container = styled.div`
-  padding: 3% 8%;
-  padding-right: 15%;
+  padding: 3% 5%;
+  padding-right: 12%;
 `;
 
 export const Inner = styled.div`
@@ -12,19 +12,18 @@ export const Inner = styled.div`
 `;
 
 export const Image = styled.img`
-  width: 12%;
-  height: 12%;
-  
+  width: 15%;
+  height: 15%;
+
   @media only screen and (max-width: 768px) {
     width: 20%;
     height: auto;
   }
-  
+
   @media only screen and (max-width: 480px) {
     width: 25%;
     height: auto;
   }
-  
 `;
 
 export const Links = styled.div`
@@ -40,13 +39,13 @@ export const Links = styled.div`
 export const Text = styled.a`
   font-size: 1.25em;
   color: #343434;
-  
+  font-family: Inter;
+
   @media only screen and (max-width: 768px) {
     font-size: 1.2rem;
   }
-  
+
   @media only screen and (max-width: 480px) {
     font-size: 0.7rem;
   }
-  
 `;

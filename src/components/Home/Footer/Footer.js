@@ -35,8 +35,12 @@ Footer.TextContainer = function FooterTextContainer({
   return <TextContainer {...restProps}>{children}</TextContainer>;
 };
 
-Footer.Text = function FooterText({ children, ...restProps }) {
-  return <Text {...restProps}>{children}</Text>;
+Footer.Text = function FooterText({ weight, children, ...restProps }) {
+  return (
+    <Text weight={weight} {...restProps}>
+      {children}
+    </Text>
+  );
 };
 
 Footer.BottomContainer = function FooterBottomContainer({
@@ -62,7 +66,12 @@ Footer.BigTextContainer = function FooterBigTextContainer({
 
 Footer.IconContainer = function FooterIconContainer({
   children,
+  width,
   ...restProps
 }) {
-  return <IconContainer {...restProps}>{children}</IconContainer>;
+  return (
+    <IconContainer width={width} {...restProps}>
+      {children}
+    </IconContainer>
+  );
 };

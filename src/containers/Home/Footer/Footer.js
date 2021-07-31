@@ -11,19 +11,20 @@ export function FooterContainer() {
       <Footer>
         <Footer.Body>
           <Footer.TextContainer>
-            <Footer.Text>TAKUM</Footer.Text>
+            <Footer.Text weight={"bold"}>TAKUM</Footer.Text>
+            <Footer.Text>Ayo Gabung!</Footer.Text>
             <Footer.Text>Privacy Policy</Footer.Text>
             <Footer.Text>Terms &#38; Condition</Footer.Text>
           </Footer.TextContainer>
           <Footer.TextContainer>
-            <Footer.Text>RESOURCES</Footer.Text>
+            <Footer.Text weight={"bold"}>RESOURCES</Footer.Text>
             <Footer.Text>Takum Support</Footer.Text>
             <Footer.Text>Berita &#38; Media</Footer.Text>
           </Footer.TextContainer>
           <Footer.MediaContainer>
             <div>
-              <Footer.Text>MEDIA SOSIAL</Footer.Text>
-              <Footer.IconContainer>
+              <Footer.Text weight={"bold"}>MEDIA SOSIAL</Footer.Text>
+              <Footer.IconContainer width={"100%"}>
                 <Footer.Image src={Insta} alt="Instagram" />
                 <Footer.Image src={Twitter} alt="Twitter" />
               </Footer.IconContainer>
@@ -32,7 +33,7 @@ export function FooterContainer() {
         </Footer.Body>
         <Footer.BottomContainer>
           <Footer.Image src={Logo} alt="logo" />
-          <Footer.IconContainer>
+          <Footer.IconContainer width={"27%"}>
             <Footer.Image src={AppStore} alt="appstore" />
             <Footer.Image src={GooglePlay} alt="googleplay" />
           </Footer.IconContainer>
