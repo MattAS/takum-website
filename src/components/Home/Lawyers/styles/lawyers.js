@@ -65,4 +65,10 @@ export const CardContainer = styled.div`
     height: 60%;
     width: 90%;
   }
+  
+  @media only screen and (max-width: 480px) {
+    width: 100%;
+    height: 80%;
+  }
+  
 `;

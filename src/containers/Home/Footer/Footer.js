@@ -33,10 +33,12 @@ export function FooterContainer() {
         </Footer.Body>
         <Footer.BottomContainer>
           <Footer.Image src={Logo} alt="logo" />
-          <Footer.IconContainer width={"27%"}>
-            <Footer.Image src={AppStore} alt="appstore" />
-            <Footer.Image src={GooglePlay} alt="googleplay" />
-          </Footer.IconContainer>
+          <div style={{ width: "37%" }}>
+            <Footer.IconContainer>
+              <Footer.Image width="50%" src={AppStore} alt="appstore" />
+              <Footer.Image width="50%" src={GooglePlay} alt="googleplay" />
+            </Footer.IconContainer>
+          </div>
         </Footer.BottomContainer>
       </Footer>
     </Footer.Container>

@@ -49,38 +49,40 @@ export function LawyerContainer() {
             />
           </Lawyers.CardContainer>
         ) : (
-          <Swiper
-            autoPlay={false}
-            centerMode={true}
-            dynamicHeight={true}
-            showIndicators={false}
-            showArrows={false}
-            centerSlidePercentage={20}
-          >
-            <SwiperSlide>
-              <LawyerCardContainer
-                name="Michael Pardede"
-                item1="750+ kasus"
-                item2="15 tahun pengalaman"
-              />
-            </SwiperSlide>
-            <Swiper>
-              <LawyerCardContainer
-                name="Ruhut Poltak Sitompol"
-                item1="~3.000 kasus"
-                item2="39 tahun pengalaman"
-                height="85%"
-                width="30.5%"
-              />
+          <Lawyers.CardContainer>
+            <Swiper
+              slidesPerView="auto"
+              centeredSlides={true}
+              initialSlide={1}
+              slidesPerGroup={1}
+              spaceBetween={30}
+            >
+              <SwiperSlide>
+                <LawyerCardContainer
+                  name="Michael Pardede"
+                  item1="750+ kasus"
+                  item2="15 tahun pengalaman"
+                  image={Ruhut}
+                />
+              </SwiperSlide>
+              <SwiperSlide>
+                <LawyerCardContainer
+                  name="Ruhut Poltak Sitompol"
+                  item1="~3.000 kasus"
+                  item2="39 tahun pengalaman"
+                  height="85%"
+                  width="30.5%"
+                />
+              </SwiperSlide>
+              <SwiperSlide>
+                <LawyerCardContainer
+                  name="Riwil Nayade"
+                  item1="~3.000 kasus"
+                  item2="39 tahun pengalaman"
+                />
+              </SwiperSlide>
             </Swiper>
-            <SwiperSlide>
-              <LawyerCardContainer
-                name="Riwil Nayade"
-                item1="~3.000 kasus"
-                item2="39 tahun pengalaman"
-              />
-            </SwiperSlide>
-          </Swiper>
+          </Lawyers.CardContainer>
         )}
       </Lawyers>
     </Lawyers.Container>

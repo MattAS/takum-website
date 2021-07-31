@@ -59,5 +59,4 @@ export const BigTextContainer = styled.div`
 export const IconContainer = styled.div`
   display: flex;
   justify-content: space-between;
-  width: ${({ width }) => width};
 `;
