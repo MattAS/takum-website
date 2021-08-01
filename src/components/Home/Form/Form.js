@@ -9,10 +9,28 @@ Form.Container = function FormContainer({ children, ...restProps }) {
   return <Container {...restProps}>{children}</Container>;
 };
 
-Form.Input = function FormInput({ margin, width, ...restProps }) {
-  return <Input maring={margin} width={width} {...restProps} />;
+Form.Input = function FormInput({
+  disabled,
+  onChangeText,
+  margin,
+  width,
+  ...restProps
+}) {
+  return (
+    <Input
+      disabled={disabled}
+      onChangeText={onChangeText}
+      maring={margin}
+      width={width}
+      {...restProps}
+    />
+  );
 };
 
-Form.Button = function FormButton({ children, ...restProps }) {
-  return <Button {...restProps}>{children}</Button>;
+Form.Button = function FormButton({ onClick, children, ...restProps }) {
+  return (
+    <Button onClick={onClick} {...restProps}>
+      {children}
+    </Button>
+  );
 };

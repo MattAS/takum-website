@@ -25,12 +25,19 @@ export const Body = styled.div`
   display: grid;
   grid-template-columns: 15% 15% 70%;
   height: 75%;
+
+  @media only screen and (max-width: 480px) {
+    grid-template-columns: 30% 30% 40%;
+  }
 `;
 
 export const Text = styled.p`
   color: white;
   font-family: Inter;
   font-weight: ${({ weight }) => weight};
+  @media only screen and (max-width: 480px) {
+    font-size: 0.8rem;
+  }
 `;
 
 export const TextContainer = styled.div`

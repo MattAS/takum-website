@@ -4,8 +4,10 @@ import Twitter from "../../../assets/images/twitter_icon.svg";
 import Logo from "../../../assets/images/takum_banner.svg";
 import AppStore from "../../../assets/images/appstore.svg";
 import GooglePlay from "../../../assets/images/googleplay.svg";
+import { useMediaQuery } from "react-responsive";
 
 export function FooterContainer() {
+  const isPhone = useMediaQuery({ query: "(max-width: 480px)" });
   return (
     <Footer.Container>
       <Footer>
@@ -24,19 +26,35 @@ export function FooterContainer() {
           <Footer.MediaContainer>
             <div>
               <Footer.Text weight={"bold"}>MEDIA SOSIAL</Footer.Text>
-              <Footer.IconContainer width={"100%"}>
-                <Footer.Image src={Insta} alt="Instagram" />
-                <Footer.Image src={Twitter} alt="Twitter" />
+              <Footer.IconContainer width={!isPhone ? "100%" : "30%"}>
+                <Footer.Image
+                  width={isPhone ? "30%" : ""}
+                  src={Insta}
+                  alt="Instagram"
+                />
+                <Footer.Image
+                  width={isPhone ? "30%" : ""}
+                  src={Twitter}
+                  alt="Twitter"
+                />
               </Footer.IconContainer>
             </div>
           </Footer.MediaContainer>
         </Footer.Body>
         <Footer.BottomContainer>
-          <Footer.Image src={Logo} alt="logo" />
-          <div style={{ width: "37%" }}>
+          <Footer.Image width={isPhone ? "30%" : ""} src={Logo} alt="logo" />
+          <div style={!isPhone ? { width: "25%" } : { width: "55%" }}>
             <Footer.IconContainer>
-              <Footer.Image width="50%" src={AppStore} alt="appstore" />
-              <Footer.Image width="50%" src={GooglePlay} alt="googleplay" />
+              <Footer.Image
+                width={!isPhone ? "45%" : "45%"}
+                src={AppStore}
+                alt="appstore"
+              />
+              <Footer.Image
+                width={!isPhone ? "45%" : "48%"}
+                src={GooglePlay}
+                alt="googleplay"
+              />
             </Footer.IconContainer>
           </div>
         </Footer.BottomContainer>

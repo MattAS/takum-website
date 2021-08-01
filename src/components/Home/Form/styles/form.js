@@ -40,6 +40,7 @@ export const Button = styled.button`
   font-size: 1.25em;
   border-radius: 8px;
   font-family: Inter;
+  cursor: pointer;
 
   @media only screen and (max-width: 768px) {
     font-size: 0.7rem;

@@ -30,9 +30,14 @@ Footer.Body = function FooterBody({ children, ...restProps }) {
 
 Footer.TextContainer = function FooterTextContainer({
   children,
+  direction,
   ...restProps
 }) {
-  return <TextContainer {...restProps}>{children}</TextContainer>;
+  return (
+    <TextContainer direction={direction} {...restProps}>
+      {children}
+    </TextContainer>
+  );
 };
 
 Footer.Text = function FooterText({ weight, children, ...restProps }) {

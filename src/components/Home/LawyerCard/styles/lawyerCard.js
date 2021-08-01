@@ -6,7 +6,7 @@ export const Container = styled.div`
   width: ${({ width }) => width};
   border-radius: 20px;
   box-shadow: 0px 0px 24px rgba(0, 0, 0, 0.18);
-  
+
   @media only screen and (max-width: 768px) {
     padding-bottom: 1%;
   }
@@ -14,6 +14,7 @@ export const Container = styled.div`
   @media only screen and (max-width: 480px) {
     width: 220px;
     height: 300px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
   }
 `;
 
@@ -22,7 +23,7 @@ export const Inner = styled.div`
 `;
 
 export const Image = styled.div`
-  height: 50%;
+  height: 70%;
   background: url(${props => props.src}) no-repeat center;
   background-size: cover;
   border-radius: 20px 20px 0 0;

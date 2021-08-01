@@ -29,6 +29,10 @@ export const Header = styled.h1`
   @media only screen and (max-width: 768px) {
     font-size: 2.8rem;
   }
+
+  @media only screen and (max-width: 480px) {
+    font-size: 1.6rem;
+  }
 `;
 
 export const Text = styled.p`
@@ -38,6 +42,9 @@ export const Text = styled.p`
   font-weight: 500;
   @media only screen and (max-width: 768px) {
     font-size: 1.6rem;
+  }
+  @media only screen and (max-width: 480px) {
+    font-size: 1rem;
   }
 `;
 
@@ -65,10 +72,9 @@ export const CardContainer = styled.div`
     height: 60%;
     width: 90%;
   }
-  
+
   @media only screen and (max-width: 480px) {
     width: 100%;
     height: 80%;
   }
-  
 `;

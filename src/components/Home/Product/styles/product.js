@@ -23,6 +23,7 @@ export const Inner = styled.div`
 
   @media only screen and (max-width: 480px) {
     flex-direction: column;
+    justify-content: flex-end;
   }
 `;
 
@@ -35,7 +36,7 @@ export const Image = styled.img`
     max-width: 100%;
   }
 
-  @media only screen and (max-width: 768px) {
+  @media only screen and (max-width: 480px) {
     max-width: 100%;
   }
 `;
@@ -50,7 +51,7 @@ export const Header = styled.h1`
   }
 
   @media only screen and (max-width: 480px) {
-    font-size: 2rem;
+    font-size: 1.8rem;
     margin: 3% 0;
     text-align: center;
   }
@@ -84,7 +85,7 @@ export const ImageContainer = styled.div`
     width: 45%;
   }
 
-  @media only screen and (max-width: 768px) {
+  @media only screen and (max-width: 480px) {
     width: 50%;
   }
 `;
@@ -97,7 +98,7 @@ export const Text = styled.p`
     font-size: 1.3rem;
   }
 
-  @media only screen and (max-width: 768px) {
+  @media only screen and (max-width: 480px) {
     font-size: 0.75rem;
   }
 `;

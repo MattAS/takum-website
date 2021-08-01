@@ -3,7 +3,8 @@ import PhoneChat from "../../../assets/images/phone_chat.png";
 import PhoneCall from "../../../assets/images/phone-call-outline.svg";
 import GridOutline from "../../../assets/images/grid-outline.svg";
 import ClockOutline from "../../../assets/images/clock-outline.svg";
-import MediaQuery from 'react-responsive'
+import MediaQuery from "react-responsive";
+import PhoneLong from "../../../assets/images/phone_long.svg";
 
 export function ProductContainer() {
   return (
@@ -13,6 +14,7 @@ export function ProductContainer() {
           <Product.ImageContainer>
             <Product.Image src={PhoneChat} alt={"chat"} />
           </Product.ImageContainer>
+
           <Product.Body>
             <Product.Header>Produk Kami</Product.Header>
             <Product.List>
@@ -33,7 +35,7 @@ export function ProductContainer() {
           <Product.Header>Produk Kami</Product.Header>
           <div style={{ width: "100%", display: "flex" }}>
             <Product.ImageContainer>
-              <Product.Image src={PhoneChat} alt={"chat"} />
+              <Product.Image src={PhoneLong} alt={"chat"} />
             </Product.ImageContainer>
             <Product.Body>
               <Product.List>
@@ -42,7 +44,9 @@ export function ProductContainer() {
               </Product.List>
               <Product.List>
                 <Product.Icon src={GridOutline} alt="grid" />
-                <Product.Text>Pengacara kami ahli di setiap bidang!</Product.Text>
+                <Product.Text>
+                  Pengacara kami ahli di setiap bidang!
+                </Product.Text>
               </Product.List>
               <Product.List>
                 <Product.Icon src={ClockOutline} alt="clock" />
@@ -50,7 +54,6 @@ export function ProductContainer() {
               </Product.List>
             </Product.Body>
           </div>
-
         </MediaQuery>
       </Product>
     </Product.Container>

@@ -1,7 +1,7 @@
 import styled from "styled-components/macro";
 
 export const Container = styled.div`
-  height: 70vh;
+  height: 68vh;
   padding: 2% 5%;
 
   @media only screen and (max-width: 768px) {
