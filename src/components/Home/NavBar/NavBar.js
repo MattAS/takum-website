@@ -17,6 +17,10 @@ NavBar.Links = function NavBarLinks({ children, ...restProps }) {
   return <Links {...restProps}>{children}</Links>;
 };
 
-NavBar.Text = function NavBarText({ children, ...restProps }) {
-  return <Text {...restProps}>{children}</Text>;
+NavBar.Text = function NavBarText({ href, children, ...restProps }) {
+  return (
+    <Text href={href} {...restProps}>
+      {children}
+    </Text>
+  );
 };

@@ -1,68 +1,50 @@
 import styled from "styled-components/macro";
 
 export const Container = styled.div`
-  width: 100%;
-  display: flex;
+  max-width: 100%;
 `;
 
 export const Input = styled.input`
-  width: ${({ width }) => width};
-  padding: 3% 2%;
+  padding: 0 0.5em 0.5em 0;
   border: none;
   border-bottom: 2px solid #696969;
-  font-size: 1.5625em;
+  font-size: min(3vw, 2rem);
   font-family: Inter;
-  margin-left: ${({ margin }) => margin};
-
-  @media only screen and (max-width: 768px) {
-    font-size: 1rem;
-  }
-
-  @media only screen and (max-width: 480px) {
-    font-size: 0.8rem;
-    padding: 2% 1%;
-
-    &:nth-child(2) {
-      margin-left: 3%;
-      flex-grow: 1;
-    }
+  margin-left: 0;
+  outline: none;
+  max-width: 100%;
+  @media (min-width: 50em) {
+    max-width: 50%;
+    padding: 0 0.5em 0 0;
+    font-size: 1.5rem;
   }
 `;
 export const Button = styled.button`
   display: flex;
   align-items: center;
   background: #6259a5;
-  height: 80%;
-  width: 35%;
+  max-width: 100%;
+  height: 5%;
+  padding: min(3%, 3rem) min(4%, 5rem);
   color: white;
   justify-content: center;
   border: none;
-  font-size: 1.25em;
+  font-size: min(2.4vw, 1.1rem);
   border-radius: 8px;
   font-family: Inter;
   cursor: pointer;
+  margin-top: 2em;
 
-  @media only screen and (max-width: 768px) {
-    font-size: 0.7rem;
-  }
-
-  @media only screen and (max-width: 480px) {
-    font-size: 0.7rem;
-    margin-top: 4%;
-    padding: 2% 0;
-    width: 100%;
+  @media (min-width: 50rem) {
+    margin-left: 1em;
   }
 `;
 export const Inner = styled.div`
   display: flex;
-  flex-direction: row;
-  width: 100%;
-  justify-content: space-between;
-  align-items: center;
+  flex-direction: column;
+  max-width: 100%;
 
-  @media only screen and (max-width: 480px) {
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
+  @media (min-width: 50em) {
+    flex-direction: row;
   }
 `;

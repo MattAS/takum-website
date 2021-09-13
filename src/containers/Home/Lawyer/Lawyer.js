@@ -7,6 +7,8 @@ import { useMediaQuery } from "react-responsive";
 import "swiper/swiper.min.css";
 import { Swiper, SwiperSlide } from "swiper/react";
 import Ruhut from "../../../assets/images/IMG_3009.JPG";
+import Riwil from "../../../assets/images/Riwil.jpg";
+import Michael from "../../../assets/images/Michael_Pardede.jpg";
 
 export function LawyerContainer() {
   const settings = {
@@ -21,7 +23,7 @@ export function LawyerContainer() {
   const isPhone = useMediaQuery({ query: "(max-width: 480px)" });
 
   return (
-    <Lawyers.Container>
+    <Lawyers.Container id="lawyer">
       <Lawyers>
         <Lawyers.Top>
           <Lawyers.Header>Temui Pengacara</Lawyers.Header>
@@ -30,22 +32,25 @@ export function LawyerContainer() {
         {!isPhone ? (
           <Lawyers.CardContainer>
             <LawyerCardContainer
-              name="Michael Pardede"
-              item1="750+ kasus"
-              item2="15 tahun pengalaman"
-              image={Ruhut}
-            />
-            <LawyerCardContainer
-              name="Ruhut Poltak Sitompol"
-              item1="~3.000 kasus"
-              item2="39 tahun pengalaman"
-              height="80%"
-              width="30%"
-            />
-            <LawyerCardContainer
               name="Riwil Nayade"
               item1="1250+ kasus"
               item2="21 tahun pengalaman"
+              image={Riwil}
+            />
+            <LawyerCardContainer
+              name="Ruhut Poltak Sitompul"
+              item1="3.000+ kasus"
+              item2="39 tahun pengalaman"
+              height="85%"
+              width="30%"
+              image={Ruhut}
+            />
+
+            <LawyerCardContainer
+              name="Michael Pardede"
+              item1="750+ kasus"
+              item2="15 tahun pengalaman"
+              image={Michael}
             />
           </Lawyers.CardContainer>
         ) : (
@@ -59,10 +64,10 @@ export function LawyerContainer() {
             >
               <SwiperSlide>
                 <LawyerCardContainer
-                  name="Michael Pardede"
-                  item1="750+ kasus"
-                  item2="15 tahun pengalaman"
-                  image={Ruhut}
+                  name="Riwil Nayade"
+                  item1="~3.000 kasus"
+                  item2="39 tahun pengalaman"
+                  image={Riwil}
                 />
               </SwiperSlide>
               <SwiperSlide>
@@ -72,13 +77,15 @@ export function LawyerContainer() {
                   item2="39 tahun pengalaman"
                   height="85%"
                   width="30.5%"
+                  image={Ruhut}
                 />
               </SwiperSlide>
               <SwiperSlide>
                 <LawyerCardContainer
-                  name="Riwil Nayade"
-                  item1="~3.000 kasus"
-                  item2="39 tahun pengalaman"
+                  name="Michael Pardede"
+                  item1="750+ kasus"
+                  item2="15 tahun pengalaman"
+                  image={Michael}
                 />
               </SwiperSlide>
             </Swiper>

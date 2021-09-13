@@ -4,20 +4,11 @@ import PhoneMockup from "../../../assets/images/phone_mockup.png";
 import { Form } from "../../../components/Home";
 import { useMediaQuery } from "react-responsive";
 import { db } from "../../../firebase";
-import * as Yup from "yup";
+import validator from "validator";
 import * as axios from "axios";
 
 const api = axios.create({
-  baseURL: "https://asia-southeast2-takum-ea88f.cloudfunctions.net/api"
-});
-
-const phoneRegExp = /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/;
-
-const validationSchema = Yup.object().shape({
-  phoneNumber: Yup.string().matches(phoneRegExp, "Phone number is not valid"),
-  email: Yup.string()
-    .email()
-    .required()
+  baseURL: "https://asia-southeast2-takum-ea88f.cloudfunctions.net/api/"
 });
 
 export function LandingContainer() {
@@ -26,74 +17,78 @@ export function LandingContainer() {
   const [text, setText] = useState();
   const [sent, setSent] = useState(false);
   const [err, setError] = useState(false);
+  const [type, setType] = useState();
 
-  const handleSubmit = event => {
+  const sendEmail = async text => {
+    try {
+      let res = await api.post("/mailing/add", { email: text });
+      console.log(res);
+    } catch (err) {
+      console.log(err.message);
+    }
+  };
+
+  // const sendPhone = async text => {
+  //   try {
+  //     let res = await api.post("/phone/add", { phone: text });
+  //     console.log(res);
+  //   } catch (err) {
+  //     console.log(err.message);
+  //   }
+  // };
+
+  const handleSubmit = async event => {
     event.preventDefault();
 
-    if(validationSchema.isType({email: text})) {
-      validationSchema.isValid({ email: text }).then(async valid => {
-        if (valid) {
-          setSent(true);
-          setError(false);
-  
-          let res = await api.post("/mailing/add", { info: text });
-          console.log(res);
-        } else {
-          setError(true);
-        }
-      });
-    } else if(validationSchema.isType({phoneNumber: text})) {
-      validationSchema.isValid({ phoneNumber: text }).then(async valid => {
-        if (valid) {
-          setSent(true);
-          setError(false);
-  
-          let res = await api.post("/mailing/add", { info: text });
-          console.log(res);
-        } else {
-          setError(true);
-        }
-      }); 
+    if (validator.isEmail(text)) {
+      sendEmail(text);
+      setError(false);
+      setSent(true);
+      setType("email");
     }
-
-    
+    // else if (validator.isMobilePhone(text)) {
+    //   sendPhone(text);
+    //   setError(false);
+    //   setSent(true);
+    //   setType("phone");
+    //   console.log(text);
+    // }
+    else {
+      setError(true);
+    }
+  };
 
   const handleChange = e => {
     setText(e.target.value);
   };
 
   return (
-    <Landing.Container>
+    <Landing.Container id="landing">
       <Landing>
         <Landing.Body>
           <Landing.Header>Solusi Hukum dalam Genggaman Tangan</Landing.Header>
           <Form.Container>
             <Form>
-              {!isPhone ? (
-                <>
-                  <Form.Input
-                    onChange={handleChange}
-                    disabled={sent}
-                    width={"55%"}
-                    placeholder="Isi Email atau Nomor. Hp"
-                  />
-                  <Form.Button onClick={handleSubmit}>Ayo Gabung!</Form.Button>
-                </>
-              ) : (
-                <>
-                  <div style={{ width: "100%", display: "flex" }}>
-                    <Form.Input
-                      onChange={handleChange}
-                      disabled={sent}
-                      width={"45%"}
-                      placeholder="Klik di sini"
-                    />
-                  </div>
-                  <Form.Button onClick={handleSubmit}>Ayo Gabung!</Form.Button>
-                </>
-              )}
+              <Form.Input
+                onChange={handleChange}
+                disabled={sent}
+                placeholder="Isi Email Anda"
+              />
+              <Form.Button onClick={handleSubmit}>Ayo Gabung!</Form.Button>
             </Form>
           </Form.Container>
+          {err && !sent ? (
+            <p style={{ color: "red" }}>Gunakan dengan email Anda.</p>
+          ) : null}
+          {!err && sent && type == "email" ? (
+            <p style={{ color: "#7B6ECC", fontWeight: "bold" }}>
+              Cek email Anda untuk unduh aplikasi Takum
+            </p>
+          ) : !err && sent && type == "phone" ? (
+            <p style={{ color: "#7B6ECC", fontWeight: "bold" }}>
+              Cek SMS Anda untuk unduh aplikasi Takum
+            </p>
+          ) : null}
         </Landing.Body>
         <Landing.Image src={PhoneMockup} alt="phone-mockup" />
       </Landing>

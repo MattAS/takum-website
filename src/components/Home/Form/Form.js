@@ -11,7 +11,7 @@ Form.Container = function FormContainer({ children, ...restProps }) {
 
 Form.Input = function FormInput({
   disabled,
-  onChangeText,
+  onChange,
   margin,
   width,
   ...restProps
@@ -19,7 +19,7 @@ Form.Input = function FormInput({
   return (
     <Input
       disabled={disabled}
-      onChangeText={onChangeText}
+      onChange={onChange}
       maring={margin}
       width={width}
       {...restProps}

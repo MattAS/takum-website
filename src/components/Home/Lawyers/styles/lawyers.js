@@ -8,8 +8,28 @@ export const Container = styled.div`
   display: flex;
   padding-bottom: 3%;
 
+  @media only screen and (max-width: 1366px) {
+    height: 80vh;
+  }
+
+  @media only screen and (max-width: 1024px) and (orientation: portrait) {
+    height: 45vh;
+  }
+
+  @media only screen and (max-width: 1024px) {
+    height: 70vh;
+  }
+
   @media only screen and (max-width: 768px) {
-    height: 55vh;
+    height: 80vh;
+  }
+
+  @media only screen and (max-width: 768px) and (orientation: landscape) {
+    height: 100vh;
+  }
+
+  @media only screen and (max-width: 367px) {
+    height: 90vh;
   }
 `;
 
@@ -63,8 +83,8 @@ export const Top = styled.div`
 export const CardContainer = styled.div`
   display: flex;
   flex-direction: row;
-  height: 80%;
-  width: 90%;
+  height: 100%;
+  width: 95%;
   justify-content: space-between;
   align-items: center;
 

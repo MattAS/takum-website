@@ -7,9 +7,9 @@ export function NavBarContainer() {
       <NavBar>
         <NavBar.Image src={Logo} alt="logo" />
         <NavBar.Links>
-          <NavBar.Text>Beranda</NavBar.Text>
-          <NavBar.Text>Produk</NavBar.Text>
-          <NavBar.Text>Pengacara</NavBar.Text>
+          <NavBar.Text href="#landing">Beranda</NavBar.Text>
+          <NavBar.Text href="#product">Produk</NavBar.Text>
+          <NavBar.Text href="#lawyer">Pengacara</NavBar.Text>
         </NavBar.Links>
       </NavBar>
     </NavBar.Container>

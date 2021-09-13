@@ -40,6 +40,7 @@ export const Text = styled.a`
   font-size: 1.25em;
   color: #343434;
   font-family: Inter;
+  text-decoration: none;
 
   @media only screen and (max-width: 768px) {
     font-size: 1.2rem;

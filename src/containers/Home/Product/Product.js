@@ -5,12 +5,13 @@ import GridOutline from "../../../assets/images/grid-outline.svg";
 import ClockOutline from "../../../assets/images/clock-outline.svg";
 import MediaQuery from "react-responsive";
 import PhoneLong from "../../../assets/images/phone_long.svg";
+import PhoneMobile from "../../../assets/images/phoneMobile.svg";
 
 export function ProductContainer() {
   return (
-    <Product.Container>
+    <Product.Container id="product">
       <Product>
-        <MediaQuery minWidth={768}>
+        <MediaQuery minWidth={"60em"}>
           <Product.ImageContainer>
             <Product.Image src={PhoneChat} alt={"chat"} />
           </Product.ImageContainer>
@@ -31,11 +32,11 @@ export function ProductContainer() {
             </Product.List>
           </Product.Body>
         </MediaQuery>
-        <MediaQuery maxWidth={480}>
+        <MediaQuery maxWidth={"60em"}>
           <Product.Header>Produk Kami</Product.Header>
-          <div style={{ width: "100%", display: "flex" }}>
+          <div style={{ width: "100%", height: "100%", display: "flex" }}>
             <Product.ImageContainer>
-              <Product.Image src={PhoneLong} alt={"chat"} />
+              <Product.Image src={PhoneMobile} alt={"chat"} />
             </Product.ImageContainer>
             <Product.Body>
               <Product.List>

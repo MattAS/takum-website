@@ -16,7 +16,7 @@ export default function LawyerCard({ children, ...restProps }) {
 LawyerCard.Container = function LawyerCardContainer({
   children,
   width = "25%",
-  height = "75%",
+  height = "80%",
   ...restProps
 }) {
   return (

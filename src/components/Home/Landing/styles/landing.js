@@ -1,54 +1,43 @@
 import styled from "styled-components/macro";
 
 export const Container = styled.div`
-  height: 68vh;
-  padding: 2% 5%;
-
-  @media only screen and (max-width: 768px) {
-    height: 45vh;
-  }
-
-  @media only screen and (max-width: 480px) {
-    height: 40vh;
-  }
+  max-width: 100%;
+  padding: 2rem 0rem;
+  display: flex;
+  flex-direction: column;
+  justify-contents: center;
+  align-items: center;
 `;
 
 export const Inner = styled.div`
+  width: min(90%, 80.5rem);
   display: flex;
-  width: 100%;
-  height: 100%;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
-
-  @media only screen and (max-width: 480px) {
-    flex-direction: column;
+  @media (min-width: 50em) {
+    flex-direction: row;
   }
 `;
 
 export const Image = styled.img`
-  width: 57%;
-  display: flex;
-  flex-grow: 1;
-  margin-right: 2%;
+  display: block;
+  max-width: 80%;
+  flex-basis: 100%;
+  margin-top: 1.5em;
 
-  @media only screen and (max-width: 480px) {
-    margin-top: 6%;
+  @media (min-width: 40em) {
+    margin-top: 0;
+    max-width: 57%;
   }
 `;
 
 export const Header = styled.p`
-  font-size: 3.125em;
+  font-size: clamp(1rem, 5.6vw, 3rem);
   font-family: Inter;
   font-weight: bold;
-  @media only screen and (max-width: 768px) {
-    font-size: 1.8rem;
-  }
-
-  @media only screen and (max-width: 480px) {
-    font-size: 1.5rem;
-  }
 `;
 
 export const Body = styled.div`
   width: 100%;
+  flex-basis: 100%;
 `;
